@@ -1,0 +1,16 @@
+
+> api2@1.0.0 build C:\Users\anshu\My Projects\pulze\apps\api2
+> npx tsc
+
+src/controllers/dashboard/deleteVideoByVideoIdController.ts(6,30): error TS2307: Cannot find module '.prisma/client' or its corresponding type declarations.
+src/controllers/dashboard/getVideosCreatedByUserController.ts(6,30): error TS2307: Cannot find module '../../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/dashboard/recievedVideosController.ts(6,30): error TS2307: Cannot find module '../../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/gettingResponse/commentsController.ts(6,30): error TS2307: Cannot find module '../../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/gettingResponse/findVideoController.ts(6,30): error TS2307: Cannot find module '.prisma/client' or its corresponding type declarations.
+src/controllers/gettingResponse/updateRecipientStatusController.ts(3,30): error TS2307: Cannot find module '../../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/recordingCompleted/sendVideoController.ts(6,30): error TS2307: Cannot find module '../../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/sendingToWorkspaceMembers/sendingVideoToWorkspaceMembersController.ts(6,30): error TS2307: Cannot find module '../../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/uploadController.ts(6,30): error TS2307: Cannot find module '../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/videoRecorderCompletedController.ts(6,30): error TS2307: Cannot find module '../../node_modules/.prisma/client' or its corresponding type declarations.
+src/controllers/workspaceController.ts(3,30): error TS2307: Cannot find module '../../node_modules/.prisma/client' or its corresponding type declarations.
+ ELIFECYCLE  Command failed with exit code 2.

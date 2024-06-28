@@ -21,6 +21,9 @@ export const sendVideo = async (req: Request, res: Response) => {
       titleFromFrontend,
       descriptionFromFrontend,
     } = req.body;
+
+    const correctedResponseTime = responseTime || new Date(0).toISOString();
+
     // console.log("senderId", senderId);
     // console.log("recipientData", recipientData);
     // console.log("videoId", videoId);
@@ -61,7 +64,7 @@ export const sendVideo = async (req: Request, res: Response) => {
       data: {
         videoId,
         senderId,
-        responseTime,
+        responseTime: correctedResponseTime,
         workspaceId,
         recipients: {
           create: recipientData.map(

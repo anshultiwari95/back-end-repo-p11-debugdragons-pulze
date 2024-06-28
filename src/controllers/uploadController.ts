@@ -21,10 +21,14 @@ config();
 //   }
 
 export const uploadVideo = async (req: Request, res: Response) => {
-  // console.log("Request object:", req);
+  console.log("Request object:", req);
   const { file } = req as any;
+  const hoi = req as any;
+
   const { title, description, userId, selectWorkspaceId } = req.body as any; // Assuming you are using a middleware to handle file uploads
   // console.log(`file:${file}`);
+  console.log("Request body:", req.body);
+  console.log("Request file:", hoi.file);
   // console.log(`title:${title}`);
   // console.log(`description:${description}`);
   if (!file) {
@@ -51,7 +55,7 @@ export const uploadVideo = async (req: Request, res: Response) => {
     const uploadStream = createUploadStream(originalname);
     stream1.pipe(uploadStream.writeStream);
     const result = await uploadStream.promise;
-    // console.log(result);
+    console.log("result:", result);
     const { ETag, Location, Bucket, Key } = result;
     try {
       const creatorId = "d68e3f11-bdab-430f-9dc2-54c2c088864d"; // Replace with the actual user ID
@@ -72,7 +76,7 @@ export const uploadVideo = async (req: Request, res: Response) => {
           },
         },
       });
-      // console.log(newVideo);
+      console.log(newVideo);
       res.json({
         success: true,
         result: {

@@ -192,9 +192,12 @@ export const uploadVideoAndCreateComment = async (
 };
 
 export const deleteComment = async (req: Request, res: Response) => {
-  // console.log("reached delete comment");
+  console.log("reached delete comment");
 
-  const { commentId } = req.params;
+  // const { commentId } = req.params;
+  const { commentId } = req.body;
+
+  console.log("commentId:", commentId);
 
   // try {
   //   // Delete the comment with the provided commentId
@@ -243,7 +246,7 @@ export const deleteComment = async (req: Request, res: Response) => {
         },
       });
 
-      res.status(204).send({ commentType: "parent" }); // Parent comment and replies successfully deleted
+      res.status(200).json({ commentType: "parent", success: true }); // Parent comment and replies successfully deleted
     } else {
       // Delete the reply comment
       await prisma.comment.delete({
@@ -252,12 +255,13 @@ export const deleteComment = async (req: Request, res: Response) => {
         },
       });
 
-      res.status(204).send({ commentType: "reply" }); // Reply comment successfully deleted
+      res.status(200).json({ commentType: "reply", success: true }); // Reply comment successfully deleted
     }
   } catch (error) {
     console.error("Error deleting comment:", error);
-    res
-      .status(500)
-      .json({ error: "An error occurred while deleting the comment." });
+    res.status(500).json({
+      error: "An error occurred while deleting the comment.",
+      success: false,
+    });
   }
 };

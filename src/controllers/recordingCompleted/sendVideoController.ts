@@ -22,7 +22,7 @@ export const sendVideo = async (req: Request, res: Response) => {
       descriptionFromFrontend,
     } = req.body;
 
-    const correctedResponseTime = responseTime || new Date(0).toISOString();
+    const correctedResponseTime = new Date(0).toISOString();
 
     // console.log("senderId", senderId);
     // console.log("recipientData", recipientData);

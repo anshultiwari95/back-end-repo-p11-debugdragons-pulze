@@ -76,6 +76,7 @@ export const uploadVideo = async (req: Request, res: Response) => {
           },
         },
       });
+
       console.log(newVideo);
       res.json({
         success: true,

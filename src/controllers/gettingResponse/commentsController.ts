@@ -175,7 +175,13 @@ export const uploadVideoAndCreateComment = async (
       });
 
       // res.json();
-      res.json({ success: true, result, newComment });
+      res.json({
+        success: true,
+        result: {
+          VideoUploadedToS3Details: result,
+          VideoUploadedtoVideoMySqlDetails: newComment,
+        },
+      });
     } catch (error) {
       console.error(`failed to create Video Comment${error}`);
       res
